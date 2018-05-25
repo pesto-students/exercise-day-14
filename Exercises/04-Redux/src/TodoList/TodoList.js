@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../styles/TodoList.css';
 
 // Note: Don't forget prop validation
-
 class TodoList extends Component {
   state = {
     input: '',

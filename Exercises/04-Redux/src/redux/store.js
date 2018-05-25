@@ -1,5 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 
+// Implement the actions addTodo, removeTodo, handleNewTodo, handleRemoveTodo
+
 export const addTodo = () => {};
 
 export const removeTodo = () => {};
