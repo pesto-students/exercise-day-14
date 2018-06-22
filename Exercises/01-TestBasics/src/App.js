@@ -4,15 +4,25 @@ import './styles/App.css';
 
 /* eslint-disable react/no-multi-comp, react/no-unused-state */
 class App extends Component {
-  state = {
-    on: false,
-    input: '',
-    mainColor: 'blue',
+  constructor(props) {
+    super(props);
+    this.state = {
+      on: false,
+      input: '',
+      mainColor: 'blue',
+      text: 'no',
+    };
   }
   render() {
     return (
-      <div className="App">
+      <div>
+        <h1 className="App">
         Welcome to React
+        </h1>
+        <p className="button-state" > this.state.text</p>
+        <button onClick={() => this.setState({ text: 'Yes!' })}>
+        Click
+        </button>
       </div>
     );
   }
