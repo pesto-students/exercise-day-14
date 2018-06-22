@@ -4,15 +4,33 @@ import './styles/App.css';
 
 /* eslint-disable react/no-multi-comp, react/no-unused-state */
 class App extends Component {
-  state = {
-    on: false,
-    input: '',
-    mainColor: 'blue',
+  constructor(props) {
+    super(props);
+    this.state = {
+      on: false,
+      input: '',
+      paraText: 'No!',
+      mainColor: 'blue',
+    };
+    this.handleClick = this.handleClick.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+  }
+
+  handleClick() {
+    this.setState({ paraText: 'Yes!' });
+  }
+
+  handleInput(event) {
+    this.setState({ input: event.currentTarget.value });
   }
   render() {
     return (
       <div className="App">
-        Welcome to React
+        <h1 className={this.state.mainColor} >Welcome to React</h1>
+        <button onClick={this.handleClick}>Click Me</button>
+        <input type="text" onChange={this.handleInput} />
+        <h2>{this.state.input}</h2>
+        <p className="button-state">{this.state.paraText}</p>
       </div>
     );
   }
