@@ -1,0 +1,1 @@
+this.handleClick = this.handleClick.bind(this);
