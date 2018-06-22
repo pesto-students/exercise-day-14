@@ -11,15 +11,20 @@ class App extends Component {
       input: '',
       mainColor: 'blue',
       paraText: 'No!',
+      message: '',
     };
     this.paraClickHandler = this.paraClickHandler.bind(this);
     this.TextChangeHandler = this.TextChangeHandler.bind(this);
+  }
+  handleStrings(str) {
+    this.setState({ message: str });
+    return this.state.message;
   }
   paraClickHandler() {
     this.setState({ paraText: 'Yes!' });
   }
   TextChangeHandler(event) {
-    this.setState({ input: event.target.value });
+    this.setState({ input: event.currentTarget.value });
   }
   render() {
     return (
