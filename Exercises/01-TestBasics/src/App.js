@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   handleInput(event) {
-    this.setState({ input: event.target.value });
+    this.setState({ input: event.currentTarget.value });
   }
   render() {
     return (
