@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './styles/App.css';
 
@@ -44,8 +45,20 @@ class App extends Component {
 
 export class Link extends Component {
   render() {
-    return null;
+    if (this.props.hide) {
+      return null;
+    }
+    return (
+      <a href={this.props.address}>
+        {this.props.address}
+      </a>
+    );
   }
 }
+
+Link.propTypes = {
+  address: PropTypes.element.isRequired,
+  hide: PropTypes.isRequired,
+};
 
 export default App;
