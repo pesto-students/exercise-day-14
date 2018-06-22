@@ -26,7 +26,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className={this.state.mainColor}>
         <h1>Welcome to React</h1>
         <p className="button-state">{this.state.text}</p>
         <button onClick={this.handleClick}>Click Me</button>
