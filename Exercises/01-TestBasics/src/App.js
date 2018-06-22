@@ -23,6 +23,7 @@ class App extends Component {
     });
   }
 
+  handleStrings = prop => !!prop;
 
   render() {
     return (
@@ -32,7 +33,8 @@ class App extends Component {
         <button onClick={this.onClickHandler}>Change Text</button>
         <h2>{this.state.input}</h2>
         <input type="text" onChange={this.onChangeHandler} value={this.state.input} />
-        <Link address="www.google.com" hide={false} />
+        <Link address="www.google.com" />
+        <Link hide={false} />
       </div>
     );
   }
@@ -41,7 +43,9 @@ class App extends Component {
 export class Link extends Component {
   render() {
     return (
-      <a href={this.props.address}>Content</a> // eslint-disable-line
+      this.props.hide ? // eslint-disable-line
+        null :
+        <a href={this.props.address}>Content</a> // eslint-disable-line
     );
   }
 }

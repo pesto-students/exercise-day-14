@@ -9,5 +9,27 @@ exports[`<App /> shallow rendering matches the snapshot 1`] = `
   >
     Welcome to React
   </h1>
+  <p
+    className="button-state"
+  >
+    No!
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Change Text
+  </button>
+  <h2 />
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <Link
+    address="www.google.com"
+  />
+  <Link
+    hide={false}
+  />
 </div>
 `;
