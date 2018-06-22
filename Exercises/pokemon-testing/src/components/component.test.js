@@ -2,10 +2,9 @@ import React from 'react';
 import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Pokemon from './Pokemon';
+import Search from './Search';
 
 Enzyme.configure({ adapter: new Adapter() });
-
-// import Search from './Search';
 
 describe('Pokemon', () => {
   let props;
@@ -40,10 +39,27 @@ describe('Pokemon', () => {
       expect(p.length).toBe(1);
     });
   });
+});
 
-//   describe('', () => {
-//     test('pokemon-id', () => {
-//       const obj;
-//     });
-//   });
+describe('Search', () => {
+  let props;
+  let mountedSearch;
+  const search = () => {
+    if (!mountedSearch) {
+      mountedSearch = mount(<Search {...props} />);
+    }
+    return mountedSearch;
+  };
+
+  beforeEach(() => {
+    props = {
+      onChange: jest.fn(),
+    };
+    mountedSearch = undefined;
+  });
+
+  test('search should render', () => {
+    const input = search().find('input');
+    expect(input.length).toBe(1);
+  });
 });
