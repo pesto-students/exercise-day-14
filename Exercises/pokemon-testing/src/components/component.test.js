@@ -18,7 +18,10 @@ describe('Pokemon', () => {
 
   beforeEach(() => {
     props = {
-      pokemon: '',
+      pokemon: {
+        id: 1,
+        name: 'bulbasaur',
+      },
     };
     mountedPokemon = undefined;
   });
@@ -38,6 +41,16 @@ describe('Pokemon', () => {
       const p = pokemon().find('p');
       expect(p.length).toBe(1);
     });
+
+    test('name', () => {
+      const name = pokemon().find('p').text();
+      expect(name).toBe(props.pokemon.name);
+    });
+
+    // test('id', () => {
+    //   const id = pokemon().find('button').style.backgroundImage;
+    //   expect(id).toBe(props.pokemon.id);
+    // });
   });
 });
 
