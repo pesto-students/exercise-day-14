@@ -28,4 +28,22 @@ describe('Pokemon', () => {
     const lis = pokemon().find('li');
     expect(lis.length).toBe(1);
   });
+
+  describe('pokemon contains', () => {
+    test('button to be rendered', () => {
+      const button = pokemon().find('button');
+      expect(button.length).toBe(1);
+    });
+
+    test('paragraph to be rendered', () => {
+      const p = pokemon().find('p');
+      expect(p.length).toBe(1);
+    });
+  });
+
+//   describe('', () => {
+//     test('pokemon-id', () => {
+//       const obj;
+//     });
+//   });
 });
