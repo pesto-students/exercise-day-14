@@ -8,11 +8,31 @@ class App extends Component {
     on: false,
     input: '',
     mainColor: 'blue',
+    text: 'No!',
   }
+
+  onClickHandler = () => {
+    this.setState({
+      text: 'Yes!',
+    });
+  }
+
+  onChangeHandler = (e) => {
+    this.setState({
+      input: e.currentTarget.value,
+    });
+  }
+
+
   render() {
     return (
       <div className="App">
-        Welcome to React
+        <h1 className={this.state.mainColor}>Welcome to React</h1>
+        <p className="button-state">{this.state.text}</p>
+        <button onClick={this.onClickHandler}>Change Text</button>
+        <h2>{this.state.input}</h2>
+        <input type="text" onChange={this.onChangeHandler} value={this.state.input} />
+        <Link address="www.google.com" hide={false} />
       </div>
     );
   }
@@ -20,7 +40,9 @@ class App extends Component {
 
 export class Link extends Component {
   render() {
-    return null;
+    return (
+      <a href={this.props.address}>Content</a> // eslint-disable-line
+    );
   }
 }
 
