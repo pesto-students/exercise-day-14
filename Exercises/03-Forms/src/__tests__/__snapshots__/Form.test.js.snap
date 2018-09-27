@@ -3,19 +3,40 @@
 exports[`<Form /> matches saved snapshot 1`] = `
 <form
   data-testid="addUserForm"
+  onSubmit={[Function]}
 >
   <h2>
     Request Information
   </h2>
   <input
     data-testid="name"
+    name="name"
+    onChange={[Function]}
     placeholder="Name"
     type="text"
     value=""
   />
+  <input
+    data-testid="email"
+    name="email"
+    onChange={[Function]}
+    placeholder="Email"
+    type="email"
+    value=""
+  />
+  <input
+    data-testid="number"
+    name="number"
+    onChange={[Function]}
+    placeholder="Number"
+    type="tel"
+    value=""
+  />
   <div>
     <input
+      checked={true}
       data-testid="checked"
+      onClick={[Function]}
       type="checkbox"
     />
     <p
