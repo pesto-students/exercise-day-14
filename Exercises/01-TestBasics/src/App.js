@@ -19,6 +19,9 @@ class App extends Component {
     const text = e.target.value;
     this.setState({ input: text });
   }
+  handleStrings = (str) => {
+    return (typeof str === 'string' && str.length > 0);
+  }
   render() {
     return (
       <div className="App">
