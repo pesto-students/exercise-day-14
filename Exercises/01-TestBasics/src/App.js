@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './styles/App.css';
 
@@ -52,8 +53,18 @@ class App extends Component {
 
 export class Link extends Component {
   render() {
-    return null;
+    return this.props.hide ? null : <a href={this.props.address}>{this.props.address}</a>;
   }
 }
+
+Link.propTypes = {
+  hide: PropTypes.bool,
+  address: PropTypes.string,
+};
+
+Link.defaultProps = {
+  hide: false,
+  address: 'www.google.com',
+};
 
 export default App;
