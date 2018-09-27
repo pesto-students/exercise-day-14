@@ -13,6 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Welcome to React</h1>
+        <div className={this.state.mainColor}>State</div>
       </div>
     );
   }
